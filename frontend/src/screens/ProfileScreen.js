@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
@@ -14,8 +14,6 @@ const ProfileScreen = () => {
   const [message, setMessage] = useState(null);
 
   const navigate = useNavigate();
-  const location = useLocation();
-
   const dispatch = useDispatch();
 
   const userDetails = useSelector((state) => state.userDetails);
@@ -42,7 +40,6 @@ const ProfileScreen = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    //DISPATCH REGISTER
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
     } else {
@@ -56,7 +53,7 @@ const ProfileScreen = () => {
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
-        {success && <Message variant="success">Profile Update</Message>}
+        {success && <Message variant="success">Profile Updated</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="name">
