@@ -162,7 +162,6 @@ const updateUser = asyncHandler(async (req, res) => {
     res.status(404);
     throw new Error("User Not Found");
   }
-  res.send("Success");
 });
 
 export {

@@ -69,8 +69,12 @@ const UserListScreen = () => {
                     )}
                   </td>
                   <td>
-                    <LinkContainer to={`/user/${user._id}/edit`}>
-                      <Button variant="light" className="btn-sm">
+                    <LinkContainer to={`/admin/user/${user._id}/edit`}>
+                      <Button
+                        variant="light"
+                        className="btn-sm"
+                        disabled={userInfo._id === user._id}
+                      >
                         <i className="fas fa-edit"></i>
                       </Button>
                     </LinkContainer>
@@ -78,6 +82,7 @@ const UserListScreen = () => {
                       variant="danger"
                       className="btn-sm"
                       onClick={() => deleteHandler(user._id)}
+                      disabled={userInfo._id === user._id}
                     >
                       <i className="fas fa-trash"></i>
                     </Button>
