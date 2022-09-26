@@ -9,6 +9,7 @@ import Paginate from "../components/Paginate";
 import Message from "../components/Message";
 import ProductCarousel from "../components/ProductCarousel";
 import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Meta />
       {!keyword ? (
         <ProductCarousel />
       ) : (

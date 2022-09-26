@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import Meta from "../components/Meta";
 import {
   Row,
   Col,
@@ -63,6 +64,7 @@ const ProductScreen = () => {
 
   return (
     <>
+      <Meta title={product.name} />
       <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
